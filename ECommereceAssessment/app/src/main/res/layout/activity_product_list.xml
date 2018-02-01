@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_product_list2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ecommereceassessment.activity.ProductListActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_7">
+
+        <RelativeLayout
+            android:id="@+id/fillterLyt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_28"
+            android:layout_marginLeft="@dimen/size_18"
+            android:layout_marginRight="@dimen/size_18"
+            android:background="@drawable/spiner_background">
+
+            <Spinner
+                android:id="@+id/sorttype_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="@dimen/size_12">
+
+            </Spinner>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/fillterLyt"
+            android:padding="@dimen/size_7">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/productListRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

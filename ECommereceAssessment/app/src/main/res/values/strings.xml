@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">ECommereceAssessment</string>
+    <string name="app_name2">ECA</string>
+
+    <!--Permission text-->
+    <string name="internetTitle">Internet Disabled</string>
+    <string name="permissionTitle">Permission Denied</string>
+    <string name="permissionStorage">Please first allow storage permission and then again click on image</string>
+    <string name="internet_connect">Please check your internet connection and try again.</string>
+    <string name="try_again">Try Again</string>
+    <string name="internetMessage">Please check your internet connection and then try again</string>
+    <string name="internet_issue">Unable to connect, might be internet issue.</string>
+    <string name="unabletoload">Unable to load data at the moment\n please try again later…</string>
+    <string name="cancelButton">Cancel</string>
+    <string name="cancel">CANCEL</string>
+    <string name="exitButton">Exit</string>
+    <string name="okButton">OK</string>
+    <string name="change">Change</string>
+    <string name="onwards">onwards*</string>
+
+    <string name="baseprice">Base Price :</string>
+    <string name="required">*required</string>
+    <string name="ingridients">Ingredients</string>
+    <string name="customize">Customize</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="pleaseselect">PLEASE SELECT</string>
+    <string name="variation">Variation</string>
+    <string name="rate">Price</string>
+    <string name="pleaseCustomize">Please Customize</string>
+    <string name="Rs">\u20B9</string>
+    <string name="color">COLOR</string>
+    <string name="size">SIZE</string>
+    <string name="price">PRICE</string>
+    <string name="sortList">No Filter</string>
+    <string name="view">views</string>
+    <string name="orders">orders</string>
+    <string name="shares">shares</string>
+    <string name="selectcolor">Select Color</string>
+    <string name="selectsize">Select Size</string>
+    <string name="mainCategory">Categories</string>
+    <string name="products">Products</string>
+</resources>
