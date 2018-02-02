@@ -97,7 +97,7 @@ public class MainCategoryActivity extends BaseActivity {
                     try {
                         JSONObject obj = (JSONObject) jsonObject;
                         products.getProductList(obj);
-                        products.getFilteredList(obj,MainCategoryActivity.this);
+                        products.getFilteredList(obj);
 
                         /*sorting main and sub category list*/
                         subcat=products.subcatList;

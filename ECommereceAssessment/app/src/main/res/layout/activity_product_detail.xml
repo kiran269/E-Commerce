@@ -122,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/spinnerLyt"
-                    android:layout_margin="@dimen/size_12"
+                    android:layout_margin="@dimen/size_14"
                     android:layout_toRightOf="@+id/price"
                     android:padding="@dimen/size_7"
                     android:textSize="@dimen/textsize_13" />

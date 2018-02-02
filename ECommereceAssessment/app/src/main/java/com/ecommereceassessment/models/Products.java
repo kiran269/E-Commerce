@@ -95,7 +95,7 @@ public class Products implements Serializable {
     }
 
     /*getting filtered list*/
-    public void getFilteredList(JSONObject jsonObject, Context context) {
+    public void getFilteredList(JSONObject jsonObject) {
         try {
             JSONArray rankingArray = jsonObject.getJSONArray("rankings");
             for (int i = 0; i < rankingArray.length(); i++) {
@@ -108,11 +108,11 @@ public class Products implements Serializable {
                     products.id = proObject.getString("id");
 
                     if (i == 0) {
-                        products.counts = proObject.getString("view_count") +" "+ context.getResources().getString(R.string.view);
+                        products.counts = proObject.getString("view_count") +"+";
                     } else if (i == 1) {
-                        products.counts = proObject.getString("order_count") +" "+ context.getResources().getString(R.string.orders);
+                        products.counts = proObject.getString("order_count") +"+";
                     } else if (i == 2) {
-                        products.counts = proObject.getString("shares") + " "+context.getResources().getString(R.string.shares);
+                        products.counts = proObject.getString("shares") + "+";
                     }
 
                     Products products1 = new BaseActivity().searchProduct(products.id, BaseActivity.allProductsArrayList);

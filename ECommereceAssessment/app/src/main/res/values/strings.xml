@@ -39,4 +39,5 @@
     <string name="selectsize">Select Size</string>
     <string name="mainCategory">Categories</string>
     <string name="products">Products</string>
+    <string name="notavailable">Not available in following selected color or size</string>
 </resources>

@@ -35,6 +35,7 @@ public class ProductDetailActivity extends BaseActivity {
     private Toolbar toolbar;
     private TextView toolbarTitle;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,28 +68,35 @@ public class ProductDetailActivity extends BaseActivity {
         colorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                 color=(String)parent.getItemAtPosition(position);
-                setPrice(color, size);
+                color = (String) parent.getItemAtPosition(position);
+                price.setText(setPrice(color, String.valueOf(sizeSpinner.getSelectedItem())));
+                checkAvailability(setPrice(color, String.valueOf(sizeSpinner.getSelectedItem())));
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                 color=(String)parent.getItemAtPosition(0);
-                setPrice(color,size);
+
+                color = (String) parent.getItemAtPosition(0);
+                 price.setText(setPrice(color, String.valueOf(sizeSpinner.getSelectedItem())));
+                checkAvailability(setPrice(color, String.valueOf(sizeSpinner.getSelectedItem())));
             }
         });
 
         sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                 size=(String)parent.getItemAtPosition(position);
-                setPrice(color,size);
+                size = (String) parent.getItemAtPosition(position);
+                price.setText(setPrice(String.valueOf(colorSpinner.getSelectedItem()), size));
+                checkAvailability(setPrice(String.valueOf(colorSpinner.getSelectedItem()),size));
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-               size=(String)parent.getItemAtPosition(0);
-                setPrice(color,size);
+
+                size = (String) parent.getItemAtPosition(0);
+                price.setText(setPrice(String.valueOf(colorSpinner.getSelectedItem()), size));
+                checkAvailability(setPrice(String.valueOf(colorSpinner.getSelectedItem()),size));
             }
         });
     }
@@ -128,20 +136,24 @@ public class ProductDetailActivity extends BaseActivity {
 
     }
 
-    private void setPrice(String color,String size)
+    private String setPrice(String color,String size)
     {
+        String price="";
         for(int i=0;i<variationList.size();i++)
         {
             Products products=variationList.get(i);
-            if(products.color.equalsIgnoreCase(color)&&products.size.equalsIgnoreCase(size))
+            if(products.color.equalsIgnoreCase(color))
             {
-                price.setText(getResources().getString(R.string.Rs)+products.price);
+                if(products.size.equalsIgnoreCase(size))
+                {
+                   price=products.price;
+                }
+
             }
-            else
-            {
-                price.setText(getResources().getString(R.string.Rs)+variationList.get(0).price);
-            }
+
+            Log.e("fghj"," "+products.price);
         }
+        return price;
     }
 
     @Override
@@ -153,4 +165,11 @@ public class ProductDetailActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void checkAvailability(String price)
+    {
+        if(price.equalsIgnoreCase(""))
+        {
+            ProductDetailActivity.this.price.setText(getResources().getString(R.string.notavailable));
+        }
+    }
 }
